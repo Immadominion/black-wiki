@@ -279,6 +279,14 @@ def main():
             if not re_ansem.search(t.get("text", "")):
                 continue
             others[t["id"]] = t
+    # Curator-pinned posts (e.g. community videos Ansem never quoted, so they
+    # never appear in the API caches). Fetch full v2 tweet objects with
+    # public_metrics via scripts/collect/xfetch.py into this file.
+    extra_fp = os.path.join(src, "xdata", "extra_viral.json")
+    if os.path.exists(extra_fp):
+        for t in load(extra_fp):
+            if t.get("id"):
+                others[t["id"]] = t
     viral = []
     for t in others.values():
         pm = t.get("public_metrics", {})

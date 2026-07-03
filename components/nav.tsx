@@ -9,9 +9,10 @@ import { fmtPrice, short } from "@/lib/format";
 const MINT = "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump";
 
 const LINKS = [
-  { href: "/", label: "Overview" },
-  { href: "/ledger/", label: "The Ledger" },
-  { href: "/receipts/", label: "The Receipts" },
+  { href: "/", label: "Overview", m: "Story" },
+  { href: "/ledger/", label: "The Ledger", m: "Ledger" },
+  { href: "/receipts/", label: "The Receipts", m: "Receipts" },
+  { href: "/scan/", label: "The Scanner", m: "Scanner" },
 ];
 
 export function Nav() {
@@ -73,7 +74,7 @@ export function Nav() {
           href={l.href}
           className={path === l.href || (l.href !== "/" && path?.startsWith(l.href.replace(/\/$/, ""))) ? "on" : ""}
         >
-          {l.label}
+          {l.m}
         </Link>
       ))}
     </nav>

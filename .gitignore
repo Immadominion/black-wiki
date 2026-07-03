@@ -6,3 +6,5 @@ out/
 data/collection/
 __pycache__/
 .DS_Store
+.vercel
+KOL-BRIEF.md

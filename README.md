@@ -15,9 +15,17 @@ npm run dev        # local dev on :3000
 npm run build      # static export to out/ (deploy anywhere)
 ```
 
-The site is a fully static export (`output: 'export'`) — the only runtime network
-call is the browser fetching live price/market cap from DexScreener's public API.
-**No RPC keys ship to the client.**
+Every page is statically generated; the browser's only third-party call is live
+price/market cap from DexScreener's public API. **No RPC keys ship to the client.**
+
+The one dynamic piece is the Scanner (`/scan`): a pay-per-use version of the
+viral-post tool, for any ticker. Flow: `POST /api/scan/intent {tag}` returns a
+Solana Pay URL with a unique reference key; the payment is verified onchain via
+RPC; a stateless HMAC pass then unlocks `POST /api/scan/run`, which queries the
+X API server-side and returns the top posts of the last 7 days ranked by views.
+Unpaid requests get an HTTP 402 with machine-readable payment terms (x402 style).
+Requires `HELIUS_RPC`, `X_BEARER_TOKEN`, and `SCAN_SECRET` set as server-side
+env vars in the deployment (never exposed to the client).
 
 ## Data pipeline
 

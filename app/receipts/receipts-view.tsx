@@ -1,23 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
-import type { ArchiveTweet, Model, Tweet, ViralTweet } from "@/lib/model";
+import type { ArchiveTweet, Model, Tweet } from "@/lib/model";
 import { fmtAmt, fmtDate, fmtInt, fmtTime } from "@/lib/format";
-
-function highlight(text: string) {
-  // collapse raw pasted mint addresses into a short form
-  const clean = text.replace(/(?:solana:)?([1-9A-HJ-NP-Za-km-z]{40,44})/g, (_, m) => `${m.slice(0, 4)}…${m.slice(-4)}`);
-  const parts = clean.split(/(\$ANSEM|@\w+)/g);
-  return parts.map((p, i) =>
-    p.startsWith("$") || p.startsWith("@") ? (
-      <span key={i} className="hl">
-        {p}
-      </span>
-    ) : (
-      <span key={i}>{p}</span>
-    )
-  );
-}
+import { ViralRow, highlight } from "@/components/viral-row";
 
 function TweetCard({ t }: { t: Tweet }) {
   const [imgOk, setImgOk] = useState(true);
@@ -56,33 +43,6 @@ function TweetCard({ t }: { t: Tweet }) {
         )}
         <span style={{ marginLeft: "auto" }}>open on X ↗</span>
       </div>
-    </a>
-  );
-}
-
-function ViralRow({ v, rank }: { v: ViralTweet; rank: number }) {
-  const [imgOk, setImgOk] = useState(true);
-  return (
-    <a className="viral-row" href={v.url} target="_blank" rel="noopener noreferrer">
-      <span className="vr-rank mono">{rank}</span>
-      <span className="vr-who">
-        {v.author?.avatar && imgOk ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img className="vr-av" src={v.author.avatar} alt="" onError={() => setImgOk(false)} />
-        ) : (
-          <span className="vr-av vr-av-fb">{(v.author?.name || "?")[0]}</span>
-        )}
-        <span className="vr-names">
-          <b>{v.author?.name || "unknown"}</b>
-          <small>{v.author ? `@${v.author.handle}` : "open to identify"} · {fmtDate(v.date)}</small>
-        </span>
-      </span>
-      <span className="vr-text">{highlight(v.text.replace(/https:\/\/t\.co\/\S+/g, "").trim())}</span>
-      <span className="vr-metrics mono">
-        <b>{fmtAmt(v.views)}</b>
-        <small>views</small>
-      </span>
-      <span className="vr-likes mono">♥ {fmtAmt(v.likes)}</span>
     </a>
   );
 }
@@ -170,6 +130,9 @@ export function ReceiptsView({ model }: { model: Model }) {
               </p>
               <span>Ansem, Jun 29 · 5.1K likes · this list is that tool, for $ANSEM ↗</span>
             </a>
+            <div className="scan-plug">
+              This board covers $ANSEM. <Link href="/scan/">The Scanner runs it live for any coin →</Link>
+            </div>
             <div className="viral-list">
               {model.viral.map((v, i) => (
                 <ViralRow key={v.id} v={v} rank={i + 1} />

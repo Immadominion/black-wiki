@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // hybrid: pages stay force-static, /api/scan/* runs serverless for the paid scanner
   trailingSlash: true,
   images: { unoptimized: true },
 };

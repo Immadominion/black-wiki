@@ -19,7 +19,7 @@ export function Support() {
     <div className="support">
       <div className="wrap support-in">
         <span className="support-lede">
-          Built solo, from Nigeria. If the ledger paid you back, pay a little forward
+          Built solo. If the ledger paid you back, pay a little forward
         </span>
         <button className="support-chip mono" onClick={copy} title={`copies ${SKR_ADDRESS}`}>
           {copied ? "address copied" : SKR_NAME}

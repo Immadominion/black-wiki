@@ -453,6 +453,44 @@ button { font: inherit; }
 .vr-metrics b { font-size: 15px; font-weight: 700; color: var(--accent-bright); }
 .vr-metrics small { color: var(--faint); font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; }
 .vr-likes { text-align: right; color: var(--muted); font-size: 11.5px; }
+.scan-plug { color: var(--muted); font-size: 12.5px; margin: -8px 2px 20px; }
+.scan-plug a { color: var(--accent); }
+.scan-plug a:hover { color: var(--accent-bright); }
+
+/* ---------- the scanner (/scan) ---------- */
+.scan-stage { padding: 40px 28px 72px; }
+.scan-form { display: flex; gap: 10px; max-width: 520px; }
+.scan-input {
+  flex: 1; min-width: 0; background: var(--surface); border: 1px solid var(--hairline);
+  border-radius: 11px; padding: 11px 14px; color: var(--ink);
+  font-family: var(--font-mono); font-size: 14px; text-transform: uppercase; outline: none;
+  transition: border-color 0.15s var(--ease);
+}
+.scan-input::placeholder { color: var(--faint); }
+.scan-input:focus { border-color: rgba(47, 214, 87, 0.5); }
+.scan-steps { list-style: none; margin-top: 24px; }
+.scan-steps li { padding: 5px 0 5px 20px; position: relative; color: var(--muted); font-size: 13px; max-width: 62ch; }
+.scan-steps li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+.pay-panel {
+  border: 1px solid var(--hairline); border-radius: 16px; background: var(--surface);
+  padding: 22px 24px 20px; max-width: 660px;
+}
+.pay-panel h3 { font-family: var(--font-display); font-weight: 700; font-size: 19px; }
+.pay-amount { font-family: var(--font-mono); color: var(--accent-bright); }
+.pay-row { display: flex; align-items: center; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+.pay-wait { display: inline-flex; align-items: center; gap: 9px; color: var(--muted); font-size: 12.5px; margin-top: 18px; }
+.pay-wait i { width: 7px; height: 7px; border-radius: 50%; background: var(--warn); animation: pulse 1.6s ease-in-out infinite; flex-shrink: 0; }
+.sig-fallback { margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--hairline-soft); }
+.scan-err {
+  margin-top: 18px; max-width: 660px;
+  border-left: 2px solid var(--exit); background: var(--exit-soft);
+  padding: 10px 14px; color: var(--ink-2); font-size: 13px;
+}
+.scan-note { color: var(--faint); font-size: 11.5px; margin-top: 14px; }
+.linklike {
+  all: unset; cursor: pointer; color: var(--accent); font-weight: 600; font-size: inherit;
+}
+.linklike:hover { color: var(--accent-bright); }
 
 /* ---------- footer ---------- */
 .site-footer { border-top: 1px solid var(--hairline); background: var(--surface); }
@@ -525,7 +563,7 @@ button { font: inherit; }
   .mint-tag { padding: 10px 4px; }
   .nav-link { padding: 12px 12px; }
   .feed-row .meta a, .row .addr a, .wline a { padding: 12px 6px; margin: -12px -6px; }
-  .mobile-tabs a { padding: 12px 18px; }
+  .mobile-tabs a { padding: 12px 13px; }
 }
 
 /* floating bottom tab bar (mobile) */
@@ -540,6 +578,6 @@ button { font: inherit; }
 }
 .mobile-tabs a {
   color: var(--muted); font-size: 12.5px; font-weight: 600;
-  padding: 9px 16px; border-radius: 999px; white-space: nowrap;
+  padding: 9px 12px; border-radius: 999px; white-space: nowrap;
 }
 .mobile-tabs a.on { color: var(--accent-bright); background: var(--accent-soft); }
