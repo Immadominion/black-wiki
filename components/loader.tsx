@@ -18,22 +18,18 @@ export function Loader({ size = 96 }: { size?: number }) {
   );
 }
 
-/** First-paint splash: black screen + bull loader. Shows once per session,
-    skipped entirely for prefers-reduced-motion. */
+/** First-paint splash: black screen + bull loader. Holds for at least 2s by
+    design (the animation is the brand moment); skipped for reduced-motion. */
 export function Splash() {
   const [gone, setGone] = useState(false);
   const [removed, setRemoved] = useState(true);
   useEffect(() => {
-    if (
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
-      sessionStorage.getItem("bbl.splashed")
-    ) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return;
     }
-    sessionStorage.setItem("bbl.splashed", "1");
     setRemoved(false);
-    const t1 = setTimeout(() => setGone(true), 950);
-    const t2 = setTimeout(() => setRemoved(true), 1550);
+    const t1 = setTimeout(() => setGone(true), 2000);
+    const t2 = setTimeout(() => setRemoved(true), 2600);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);

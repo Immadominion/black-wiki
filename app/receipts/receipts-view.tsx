@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { ArchiveTweet, Model, Tweet } from "@/lib/model";
+import type { ArchiveTweet, Model, Tweet, ViralTweet } from "@/lib/model";
 import { fmtAmt, fmtDate, fmtInt, fmtTime } from "@/lib/format";
 
 function highlight(text: string) {
@@ -60,8 +60,35 @@ function TweetCard({ t }: { t: Tweet }) {
   );
 }
 
+function ViralRow({ v, rank }: { v: ViralTweet; rank: number }) {
+  const [imgOk, setImgOk] = useState(true);
+  return (
+    <a className="viral-row" href={v.url} target="_blank" rel="noopener noreferrer">
+      <span className="vr-rank mono">{rank}</span>
+      <span className="vr-who">
+        {v.author?.avatar && imgOk ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img className="vr-av" src={v.author.avatar} alt="" onError={() => setImgOk(false)} />
+        ) : (
+          <span className="vr-av vr-av-fb">{(v.author?.name || "?")[0]}</span>
+        )}
+        <span className="vr-names">
+          <b>{v.author?.name || "unknown"}</b>
+          <small>{v.author ? `@${v.author.handle}` : "open to identify"} · {fmtDate(v.date)}</small>
+        </span>
+      </span>
+      <span className="vr-text">{highlight(v.text.replace(/https:\/\/t\.co\/\S+/g, "").trim())}</span>
+      <span className="vr-metrics mono">
+        <b>{fmtAmt(v.views)}</b>
+        <small>views</small>
+      </span>
+      <span className="vr-likes mono">♥ {fmtAmt(v.likes)}</span>
+    </a>
+  );
+}
+
 export function ReceiptsView({ model }: { model: Model }) {
-  const [mode, setMode] = useState<"key" | "feed">("key");
+  const [mode, setMode] = useState<"key" | "feed" | "viral">("key");
   const [feedFilter, setFeedFilter] = useState<"ansem" | "all">("ansem");
 
   const feed = useMemo(() => {
@@ -100,6 +127,9 @@ export function ReceiptsView({ model }: { model: Model }) {
             <button className={`pill ${mode === "feed" ? "on" : ""}`} onClick={() => setMode("feed")}>
               Ansem&apos;s feed
             </button>
+            <button className={`pill ${mode === "viral" ? "on" : ""}`} onClick={() => setMode("viral")}>
+              Going viral
+            </button>
             {mode === "feed" && (
               <>
                 <span className="tool-sep" />
@@ -125,6 +155,32 @@ export function ReceiptsView({ model }: { model: Model }) {
             {model.tweets.map((t) => (
               <TweetCard key={t.id} t={t} />
             ))}
+          </div>
+        ) : mode === "viral" ? (
+          <div className="rise">
+            <a
+              className="toolask"
+              href="https://x.com/blknoiz06/status/2071586866860585432"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p>
+                &ldquo;is there a tool that i can use to airdrop to ppl with the most viral social media posts
+                on a specific coin tag?&rdquo;
+              </p>
+              <span>— Ansem, Jun 29 · 5.1K likes · this list is that tool, for $ANSEM ↗</span>
+            </a>
+            <div className="viral-list">
+              {model.viral.map((v, i) => (
+                <ViralRow key={v.id} v={v} rank={i + 1} />
+              ))}
+            </div>
+            <div className="table-foot">
+              <span>
+                ranked by views at archive time · posts Ansem interacted with during the campaign · author
+                identity via X&apos;s public embed data
+              </span>
+            </div>
           </div>
         ) : (
           <div className="rise">

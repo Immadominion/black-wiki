@@ -41,7 +41,7 @@ export default function Overview() {
           </div>
           <div className="hero-bull rise rise-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/bull-hero.png" alt="The Black Bull" />
+            <img src="/coin-hero.png" alt="$ANSEM — The Black Bull, the coin's own artwork" className="coin-art" />
           </div>
         </div>
       </section>
@@ -108,6 +108,9 @@ export default function Overview() {
             <div className="hero-cta">
               <Link href="/receipts/" className="btn btn-ghost">
                 Every tweet, in order
+              </Link>
+              <Link href="/receipts/" className="btn btn-ghost">
+                The viral feed he asked for
               </Link>
             </div>
           </div>

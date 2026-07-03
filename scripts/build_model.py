@@ -17,6 +17,22 @@ import argparse, html, json, os, shutil, statistics, time
 MINT = "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump"
 AIRDROP_WALLET = "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52"
 
+# Curated "key moments" — hydrated tweets shown as featured cards (in date order).
+# Everything else in xdata/hydrated/ is enrichment (e.g. viral-feed author info).
+KEY_IDS = {
+    "2066989048497905753", "2070607672785744258", "2070871430191800832",
+    "2071071494801633690", "2071202382239686687", "2071573866875429166",
+    "2071349876256887063", "2071128989473837440", "2071422705262543187",
+    "2071730723568926765", "2071755661160202578", "2071329637108441244",
+    "2070886846566129925", "2071581476207182216", "2071616630224814291",
+    "2072294275551764956", "2071863248391917854", "2071584679593984188",
+    "2072367992206241816", "2072323718752133206", "2072505868852277367",
+    "2072280273698574499", "2072280289892876324", "2072280305168490989",
+    "2072664271410839886",
+    "2071586866860585432",  # Ansem: "is there a tool... most viral posts on a coin tag?"
+    "2071167193694302479",  # @nexocooker: "$300 into $ANSEM yesterday, now worth $689,000"
+}
+
 KNOWN_WALLETS = {
     "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe": "Token deployer (anon; gifted 65% to Ansem, netted ~$5.5K)",
     "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52": "Ansem's airdrop wallet",
@@ -164,13 +180,17 @@ def main():
         "recipients_with_identity": len(named),
     }
 
-    # --- tweets ---
+    # --- tweets (key moments only) + hydration lookup for the viral feed ---
     tweets = []
+    hydrated_all = {}
     hyd_dir = os.path.join(src, "xdata", "hydrated")
     if os.path.isdir(hyd_dir):
         for fn in os.listdir(hyd_dir):
             d = load(os.path.join(hyd_dir, fn))
             if d.get("_error") or not d.get("user"):
+                continue
+            hydrated_all[d.get("id_str")] = d
+            if d.get("id_str") not in KEY_IDS:
                 continue
             photos = d.get("photos") or []
             quoted = d.get("quoted_tweet") or {}
@@ -245,6 +265,45 @@ def main():
         })
     archive.sort(key=lambda t: t["date"], reverse=True)
 
+    # --- viral feed: other people's $ANSEM posts ranked by views ---
+    # (view counts come from the API caches' includes; author identity from the
+    #  free syndication hydration. This is the list Ansem asked a tool for.)
+    import re as _re
+    re_ansem = _re.compile(r"ansem|black ?bull|9cRCn9|blknoiz06", _re.I)
+    others = {}
+    for fn in sorted(_glob.glob(os.path.join(src, "xdata", "*_pages", "page_*.json"))):
+        page = load(fn)
+        for t in (page.get("includes") or {}).get("tweets") or []:
+            if t.get("author_id") == "973261472":
+                continue
+            if not re_ansem.search(t.get("text", "")):
+                continue
+            others[t["id"]] = t
+    viral = []
+    for t in others.values():
+        pm = t.get("public_metrics", {})
+        h = hydrated_all.get(t["id"])
+        author = None
+        if h:
+            author = {
+                "name": h["user"].get("name"),
+                "handle": h["user"].get("screen_name"),
+                "avatar": h["user"].get("profile_image_url_https"),
+            }
+        viral.append({
+            "id": t["id"],
+            "url": f"https://x.com/{author['handle']}/status/{t['id']}" if author else f"https://x.com/i/web/status/{t['id']}",
+            "author": author,
+            "date": t.get("created_at", ""),
+            "text": html.unescape((t.get("note_tweet") or {}).get("text") or t.get("text", "")),
+            "views": pm.get("impression_count", 0),
+            "likes": max(pm.get("like_count", 0), (h or {}).get("favorite_count") or 0),
+            "rts": pm.get("retweet_count", 0),
+            "replies": pm.get("reply_count", 0),
+        })
+    viral.sort(key=lambda v: -v["views"])
+    viral = viral[:30]
+
     model = {
         "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "token": dossier.get("token", {}),
@@ -260,6 +319,7 @@ def main():
         "timeline": dossier.get("timeline", []),
         "tweets": tweets,
         "archive": archive,
+        "viral": viral,
         "quotes": dossier.get("quotes", []),
         "open_questions": dossier.get("open_questions", []),
         "sources": dossier.get("sources", []),
@@ -269,7 +329,7 @@ def main():
     with open(out_path, "w") as f:
         json.dump(model, f)
     print(f"model.json written: {os.path.getsize(out_path)/1024:.0f} KB")
-    print(f"  recipients={len(out_recipients)} transfers={len(transfers)} tweets={len(tweets)} archive={len(archive)}")
+    print(f"  recipients={len(out_recipients)} transfers={len(transfers)} tweets={len(tweets)} archive={len(archive)} viral={len(viral)} ({sum(1 for v in viral if v['author'])} with authors)")
     print(f"  total airdropped: {total_ansem:,.0f} ANSEM (~${total_usd:,.0f} at drop time)")
     print(f"  identity resolved: {len(named)} | holding {stats['pct_recipients_holding']:.0%} / sold {stats['pct_recipients_sold']:.0%}")
 

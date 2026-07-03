@@ -15,7 +15,7 @@ export default function RiveBull() {
   });
   if (failed) {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img src="/bull.png" alt="" className="loader-fallback" />;
+    return <img src="/token.png" alt="" className="loader-fallback" />;
   }
   return <RiveComponent className="loader-canvas" />;
 }

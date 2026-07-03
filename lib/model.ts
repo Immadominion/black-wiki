@@ -44,6 +44,18 @@ export type ArchiveTweet = {
   quoted_text: string | null;
 };
 
+export type ViralTweet = {
+  id: string;
+  url: string;
+  author: { name: string; handle: string; avatar: string | null } | null;
+  date: string;
+  text: string;
+  views: number;
+  likes: number;
+  rts: number;
+  replies: number;
+};
+
 export type Model = {
   generated_at: string;
   token: Record<string, any>;
@@ -59,6 +71,7 @@ export type Model = {
   timeline: { date: string; event: string; sources?: string[] }[];
   tweets: Tweet[];
   archive: ArchiveTweet[];
+  viral: ViralTweet[];
   quotes: { text: string; who: string; context?: string; source?: string }[];
   open_questions: string[];
   sources: string[];

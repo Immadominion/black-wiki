@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Black Bull Ledger",
     description: "Every $ANSEM airdrop Ansem has sent, traced onchain. The story, the wallets, the receipts.",
-    images: ["/bull-hero.png"],
+    images: ["/coin-hero.png"],
   },
 };
 
