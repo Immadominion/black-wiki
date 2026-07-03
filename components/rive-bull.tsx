@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { useRive } from "@rive-app/react-canvas";
+import { RuntimeLoader, useRive } from "@rive-app/react-canvas";
+
+// self-hosted wasm — no unpkg dependency at runtime
+RuntimeLoader.setWasmUrl("/rive.wasm");
 
 export default function RiveBull() {
   const [failed, setFailed] = useState(false);

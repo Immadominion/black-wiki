@@ -5,7 +5,9 @@ import type { ArchiveTweet, Model, Tweet } from "@/lib/model";
 import { fmtAmt, fmtDate, fmtInt, fmtTime } from "@/lib/format";
 
 function highlight(text: string) {
-  const parts = text.split(/(\$ANSEM|@\w+)/g);
+  // collapse raw pasted mint addresses into a short form
+  const clean = text.replace(/(?:solana:)?([1-9A-HJ-NP-Za-km-z]{40,44})/g, (_, m) => `${m.slice(0, 4)}…${m.slice(-4)}`);
+  const parts = clean.split(/(\$ANSEM|@\w+)/g);
   return parts.map((p, i) =>
     p.startsWith("$") || p.startsWith("@") ? (
       <span key={i} className="hl">
