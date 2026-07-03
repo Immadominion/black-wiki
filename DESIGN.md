@@ -50,8 +50,12 @@ bird = tweet, bull glyph in the wordmark. Meaning without words.
 - **Radius:** pills 999 · buttons 10-12 · tweet cards 16 · everything else square-ish.
 
 ## Motion
-- Ease `cubic-bezier(0.32,0.72,0,1)`; entrances 500-700ms rise, staggered by
-  section; hovers 150ms; `prefers-reduced-motion` respected. Transform/opacity only.
+- Ease `cubic-bezier(0.32,0.72,0,1)`; entrances 500-800ms rise; hovers 150ms;
+  `prefers-reduced-motion` respected. Transform/opacity only.
+- **Adaptive scrolling (overview, desktop):** `scroll-snap-type: y proximity`
+  settles the page onto acts (never `mandatory` — it fights tall sections);
+  acts reveal on arrival via IntersectionObserver (`.has-reveal` gate so no-JS
+  users see everything). Tool pages (ledger/receipts) stay free-scrolling.
 
 ## Anti-patterns (never)
 Purple gradients · icon-in-circle 3-col grids · centered-everything · uniform

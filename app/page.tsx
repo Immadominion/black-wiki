@@ -2,6 +2,7 @@ import Link from "next/link";
 import { loadModel } from "@/lib/model";
 import { StatBand } from "@/components/statband";
 import { Sparkline } from "@/components/sparkline";
+import { RevealObserver } from "@/components/reveal";
 import { fmtInt, short } from "@/lib/format";
 
 export const dynamic = "force-static";
@@ -13,6 +14,7 @@ export default function Overview() {
 
   return (
     <>
+      <RevealObserver />
       {/* hero */}
       <div className="fold">
       <section className="hero">

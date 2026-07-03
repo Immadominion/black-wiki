@@ -197,6 +197,20 @@ button { font: inherit; }
   .section { min-height: calc(100svh - 61px); display: grid; align-items: center; }
   .section-head h2 { font-size: clamp(24px, 2.4vw, 32px); }
 }
+
+/* adaptive scrolling: the page settles onto acts (overview only, desktop only) */
+@media (min-width: 901px) and (prefers-reduced-motion: no-preference) {
+  html:has(.fold) { scroll-snap-type: y proximity; scroll-padding-top: 61px; }
+  .fold, .section { scroll-snap-align: start; }
+}
+
+/* scroll-triggered act reveals (class applied by RevealObserver once JS is live) */
+.has-reveal .section > .wrap {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+.has-reveal .section > .wrap.in { opacity: 1; transform: none; }
 .section-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 26px; }
 .section-head h2 {
   font-family: var(--font-display); font-weight: 800; font-size: 24px;
