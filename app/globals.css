@@ -192,6 +192,11 @@ button { font: inherit; }
 
 /* ---------- sections ---------- */
 .section { border-bottom: 1px solid var(--hairline); padding: 54px 0; }
+@media (min-width: 901px) {
+  /* every overview section is a full act: one screen, content centered */
+  .section { min-height: calc(100svh - 61px); display: grid; align-items: center; }
+  .section-head h2 { font-size: clamp(24px, 2.4vw, 32px); }
+}
 .section-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 26px; }
 .section-head h2 {
   font-family: var(--font-display); font-weight: 800; font-size: 24px;
@@ -202,9 +207,8 @@ button { font: inherit; }
 .section-head .tail a { color: var(--accent); }
 .section-head .tail a:hover { color: var(--accent-bright); }
 
-/* chart: a full act of its own */
+/* chart act */
 @media (min-width: 901px) {
-  .chart-band { min-height: calc(100svh - 61px); display: grid; align-items: center; }
   .chart-band svg { height: 340px; }
 }
 .chart-band .spark-meta { display: flex; gap: 18px; color: var(--muted); font-size: 12px; margin-top: 12px; flex-wrap: wrap; }
