@@ -194,6 +194,57 @@ def main():
             })
     tweets.sort(key=lambda t: t.get("date") or "")
 
+    # --- full feed archive (Ansem's own tweets from cached API pages) ---
+    import glob as _glob
+    seen = {}
+    quoted_lookup = {}
+    media_lookup = {}
+    for fn in sorted(_glob.glob(os.path.join(src, "xdata", "*_pages", "page_*.json"))):
+        page = load(fn)
+        inc = page.get("includes") or {}
+        for m in inc.get("media") or []:
+            media_lookup[m.get("media_key")] = m.get("url") or m.get("preview_image_url")
+        for t in inc.get("tweets") or []:
+            quoted_lookup[t["id"]] = html.unescape(t.get("text", ""))
+        for t in page.get("data") or []:
+            if t.get("author_id") not in (None, "973261472"):
+                continue
+            if t.get("text", "").startswith("RT @"):
+                continue
+            seen[t["id"]] = t
+    archive = []
+    for t in seen.values():
+        pm = t.get("public_metrics", {})
+        text = html.unescape((t.get("note_tweet") or {}).get("text") or t.get("text", ""))
+        quoted_text = None
+        reply_to = None
+        for ref in t.get("referenced_tweets") or []:
+            if ref.get("type") == "quoted":
+                quoted_text = quoted_lookup.get(ref.get("id"))
+        if t.get("in_reply_to_user_id"):
+            m = None
+            if text.startswith("@"):
+                m = text.split()[0]
+            reply_to = m or "reply"
+        photo = None
+        for mk in (t.get("attachments") or {}).get("media_keys") or []:
+            if media_lookup.get(mk):
+                photo = media_lookup[mk]
+                break
+        archive.append({
+            "id": t["id"],
+            "date": t.get("created_at", ""),
+            "text": text,
+            "likes": pm.get("like_count", 0),
+            "rts": pm.get("retweet_count", 0),
+            "replies": pm.get("reply_count", 0),
+            "is_reply": bool(t.get("in_reply_to_user_id")),
+            "reply_to": reply_to,
+            "photo": photo,
+            "quoted_text": quoted_text[:200] if quoted_text else None,
+        })
+    archive.sort(key=lambda t: t["date"], reverse=True)
+
     model = {
         "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "token": dossier.get("token", {}),
@@ -208,6 +259,7 @@ def main():
         "recipients": out_recipients,
         "timeline": dossier.get("timeline", []),
         "tweets": tweets,
+        "archive": archive,
         "quotes": dossier.get("quotes", []),
         "open_questions": dossier.get("open_questions", []),
         "sources": dossier.get("sources", []),
@@ -217,7 +269,7 @@ def main():
     with open(out_path, "w") as f:
         json.dump(model, f)
     print(f"model.json written: {os.path.getsize(out_path)/1024:.0f} KB")
-    print(f"  recipients={len(out_recipients)} transfers={len(transfers)} tweets={len(tweets)}")
+    print(f"  recipients={len(out_recipients)} transfers={len(transfers)} tweets={len(tweets)} archive={len(archive)}")
     print(f"  total airdropped: {total_ansem:,.0f} ANSEM (~${total_usd:,.0f} at drop time)")
     print(f"  identity resolved: {len(named)} | holding {stats['pct_recipients_holding']:.0%} / sold {stats['pct_recipients_sold']:.0%}")
 

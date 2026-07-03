@@ -31,6 +31,19 @@ export type Tweet = {
   quoted: { handle: string; text: string } | null;
 };
 
+export type ArchiveTweet = {
+  id: string;
+  date: string;
+  text: string;
+  likes: number;
+  rts: number;
+  replies: number;
+  is_reply: boolean;
+  reply_to: string | null;
+  photo: string | null;
+  quoted_text: string | null;
+};
+
 export type Model = {
   generated_at: string;
   token: Record<string, any>;
@@ -45,6 +58,7 @@ export type Model = {
   recipients: Recipient[];
   timeline: { date: string; event: string; sources?: string[] }[];
   tweets: Tweet[];
+  archive: ArchiveTweet[];
   quotes: { text: string; who: string; context?: string; source?: string }[];
   open_questions: string[];
   sources: string[];

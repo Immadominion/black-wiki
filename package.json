@@ -9,6 +9,7 @@
     "model": "python3 scripts/build_model.py --src ./data/collection"
   },
   "dependencies": {
+    "@rive-app/react-canvas": "^4.29.4",
     "next": "14.2.35",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
