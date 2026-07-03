@@ -26,11 +26,10 @@ without explicit approval.
 - **Scale:** 11 chips · 12.5 meta · 13.5 body · 15 row title · 20 section · 28-44 display.
 
 ## Color
-- **Page:** `#0B0A08`, radial `rgba(240,169,60,.07)` top-center fading to black.
-- **Shell:** `#14110C`, radius 30, border `#241E15`, shadow `0 40px 100px rgba(0,0,0,.55)`.
-- **Card:** `#1B1710`, soft bg `#221C13`, hairline `#2B2418`.
-- **Ink:** `#F0E9DC` · secondary `#B5AA97` · muted `#847964` · faint `#5C5344`.
-- **Hero panel:** `linear-gradient(120deg,#171208,#241A0B,#2E2007)` + radial glow `rgba(240,169,60,.22)`; mint-equivalent highlight `#F5CE84`.
+- **Page:** `#050505` true black, full-bleed — NO floating shell/frame (rejected 2026-07-03: "that's just the design file's frame").
+- **Surfaces:** `#0D0D0C` / `#121210`, separated by hairlines `#1E1D1A` / `#171613` — sections divide by line, not by card.
+- **Ink:** `#F2EFE8` · secondary `#B8B2A4` · muted `#9A9484` · faint `#87816F` (AA-checked on black).
+- **Hero:** radial gold glow `rgba(232,163,61,.10)` behind the bull mascot (public/bull-hero.png) — the artwork IS the hero decoration.
 - **Accent (bull gold):** `#E8A33D`; bright `#F0B04A`; CTA `linear-gradient(135deg,#F0B04A,#B87A1C)`; glow `rgba(232,163,61,.28)`.
 - **Semantic:** holding/verified `#4CAF6E` · partial `#E8A33D` · sold/exit `#E05252` (chip on `rgba(224,82,82,.12)`) · info `#6B96EF` (chip on `rgba(107,150,239,.13)`).
 - **Rule:** green = still holding / onchain-verified ONLY. Red = exits only. Gold is the brand.
@@ -40,11 +39,15 @@ Inline SVG marks (no icon font): arrow-out = transfer, seal = onchain-verified,
 bird = tweet, bull glyph in the wordmark. Meaning without words.
 
 ## Spacing & Layout
-- **Base unit:** 4px. Density compact: rows 40-44px, cards 16-20px padding.
-- **Layout:** 3-pane rail — market rail 264px (sticky) · ledger center ·
-  story rail 320px (sticky). Below: tweets grid, analysis band, methodology.
-- **Max shell width:** 1420px. Mobile <1080px: single column, KPIs 2-up.
-- **Radius:** chips 999 · buttons 10-12 · cards 16-18 · hero 24 · shell 30.
+- **Base unit:** 4px. Density compact: rows 44-47px, cards 16-18px padding.
+- **Structure (2026-07-03):** MULTI-PAGE — `/` story overview · `/ledger/` table +
+  analysis strip · `/receipts/` key tweets + day-grouped feed. Sticky top nav with
+  active state; mobile gets a fixed bottom tab bar (sibling of the header — never
+  nest position:fixed inside the backdrop-filtered header).
+- **Stats:** editorial stat band — hairline-separated columns, NEVER capsule/tile
+  KPIs (rejected as AI-design tell).
+- **Content width:** 1320px wrap, 28px gutters. Mobile <900px: single column.
+- **Radius:** pills 999 · buttons 10-12 · tweet cards 16 · everything else square-ish.
 
 ## Motion
 - Ease `cubic-bezier(0.32,0.72,0,1)`; entrances 500-700ms rise, staggered by
