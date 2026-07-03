@@ -125,8 +125,10 @@ button { font: inherit; }
 }
 .hero-in { display: grid; grid-template-columns: minmax(420px, 1.2fr) minmax(300px, 0.8fr); gap: 40px; align-items: center; padding-top: 64px; padding-bottom: 56px; }
 @media (min-width: 901px) {
-  /* the hero owns the first viewport; the fold lands on the stat band */
-  .hero-in { min-height: min(calc(100svh - 61px), 1040px); padding-top: 24px; padding-bottom: 24px; }
+  /* first viewport = hero + stat band; the stats are the hero's bottom shelf */
+  .fold { min-height: min(calc(100svh - 61px), 1150px); display: flex; flex-direction: column; }
+  .fold .hero { flex: 1; display: grid; align-items: center; }
+  .hero-in { padding-top: 24px; padding-bottom: 24px; }
 }
 .kicker {
   color: var(--accent-bright); font-size: 11.5px; font-weight: 700;
@@ -200,7 +202,11 @@ button { font: inherit; }
 .section-head .tail a { color: var(--accent); }
 .section-head .tail a:hover { color: var(--accent-bright); }
 
-/* chart */
+/* chart: a full act of its own */
+@media (min-width: 901px) {
+  .chart-band { min-height: calc(100svh - 61px); display: grid; align-items: center; }
+  .chart-band svg { height: 340px; }
+}
 .chart-band .spark-meta { display: flex; gap: 18px; color: var(--muted); font-size: 12px; margin-top: 12px; flex-wrap: wrap; }
 .chart-band .spark-meta b { color: var(--ink-2); font-weight: 600; }
 .chart-band .mk { display: inline-flex; align-items: center; gap: 6px; }

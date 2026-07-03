@@ -14,6 +14,7 @@ export default function Overview() {
   return (
     <>
       {/* hero */}
+      <div className="fold">
       <section className="hero">
         <div className="wrap hero-in">
           <div className="rise">
@@ -46,8 +47,9 @@ export default function Overview() {
         </div>
       </section>
 
-      {/* stat band */}
+      {/* stat band closes the fold */}
       <StatBand model={model} />
+      </div>
 
       {/* chart */}
       <section className="section chart-band">
