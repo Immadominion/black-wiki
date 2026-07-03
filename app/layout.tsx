@@ -7,7 +7,7 @@ import { loadModel } from "@/lib/model";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Black Bull Ledger — every $ANSEM airdrop, receipts attached",
+  title: "Black Bull Ledger · every $ANSEM airdrop, receipts attached",
   description:
     "The full record of Ansem's $ANSEM airdrop campaign: every onchain transfer, who received it, whether they kept it, and the tweets that made it happen.",
   icons: {

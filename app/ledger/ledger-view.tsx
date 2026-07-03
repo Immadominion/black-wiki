@@ -145,7 +145,7 @@ export function LedgerView({ model }: { model: Model }) {
           <h1 className="rise">The airdrop ledger</h1>
           <p className="sub rise rise-1">
             <b>{fmtInt(s.unique_recipients)} wallets</b> have received <b>{fmtAmt(s.total_ansem)} $ANSEM</b> across{" "}
-            <b>{fmtInt(s.total_transfers)} transfers</b> since Jun 28 — worth <b>{fmtUsd(s.total_usd_at_drop)}</b> at
+            <b>{fmtInt(s.total_transfers)} transfers</b> since Jun 28, worth <b>{fmtUsd(s.total_usd_at_drop)}</b> at
             the moments they landed. Click any row for its transfer history and onchain receipts.
           </p>
           <div style={{ height: 28 }} />
@@ -204,8 +204,7 @@ export function LedgerView({ model }: { model: Model }) {
           <h4>Concentration</h4>
           <div className="big">{fmtPct(s.top7_share_of_tokens, 1)}</div>
           <div className="note">
-            of all airdropped tokens went to just 7 wallets. Lookonchain flagged the same pattern on Jun 30 — and
-            those wallets were already dumping.
+            of all airdropped tokens went to just 7 wallets. Lookonchain flagged the same pattern on Jun 30, and            those wallets were already dumping.
           </div>
         </div>
       </div>
@@ -263,12 +262,12 @@ export function LedgerView({ model }: { model: Model }) {
         </div>
         {filtered.length > limit && (
           <button className="more" onClick={() => setLimit(limit + 200)}>
-            show more — {fmtInt(filtered.length - limit)} remaining
+            show more · {fmtInt(filtered.length - limit)} remaining
           </button>
         )}
         <div className="table-foot">
           <span>
-            status compares each wallet&apos;s current balance to what it received — tokens moved elsewhere read as
+            status compares each wallet&apos;s current balance to what it received; tokens moved elsewhere read as
             sold · holders snapshot {model.generated_at.slice(0, 10)}
           </span>
           <span className="mono">

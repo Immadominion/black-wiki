@@ -5,7 +5,7 @@ import { LedgerView } from "./ledger-view";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "The Ledger — Black Bull Ledger",
+  title: "The Ledger · Black Bull Ledger",
   description: "Every wallet Ansem has airdropped $ANSEM to, traced onchain: amounts, value at drop, and who's still holding.",
 };
 

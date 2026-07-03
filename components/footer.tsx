@@ -6,7 +6,7 @@ export function Footer({ generatedAt }: { generatedAt?: string }) {
           <div className="foot-brand">Black Bull Ledger</div>
           <p>
             Independent community record of the $ANSEM airdrop campaign. Every figure is derived from Solana
-            mainnet or archived from X — verify anything on{" "}
+            mainnet or archived from X. Verify anything on{" "}
             <a
               href="https://solscan.io/token/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump"
               target="_blank"
@@ -14,7 +14,7 @@ export function Footer({ generatedAt }: { generatedAt?: string }) {
             >
               Solscan
             </a>
-            . Not affiliated with Ansem or pump.fun. Not financial advice — most memecoins go to zero.
+            . Not affiliated with Ansem or pump.fun. Not financial advice; most memecoins go to zero.
           </p>
         </div>
         <div className="foot-meta mono">

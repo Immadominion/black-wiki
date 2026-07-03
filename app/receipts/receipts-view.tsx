@@ -116,7 +116,7 @@ export function ReceiptsView({ model }: { model: Model }) {
         <div className="wrap">
           <h1 className="rise">The receipts</h1>
           <p className="sub rise rise-1">
-            How it happened on X — from the anonymous launch Ansem initially waved off, to the creator-fee pledge,
+            How it happened on X: from the anonymous launch Ansem initially waved off, to the creator-fee pledge,
             the airdrops, the exposé, and the victory laps. <b>{fmtInt(model.archive.length)} tweets archived</b>{" "}
             from @blknoiz06&apos;s feed, plus the key moments from around the timeline.
           </p>
@@ -168,7 +168,7 @@ export function ReceiptsView({ model }: { model: Model }) {
                 &ldquo;is there a tool that i can use to airdrop to ppl with the most viral social media posts
                 on a specific coin tag?&rdquo;
               </p>
-              <span>— Ansem, Jun 29 · 5.1K likes · this list is that tool, for $ANSEM ↗</span>
+              <span>Ansem, Jun 29 · 5.1K likes · this list is that tool, for $ANSEM ↗</span>
             </a>
             <div className="viral-list">
               {model.viral.map((v, i) => (
@@ -195,7 +195,7 @@ export function ReceiptsView({ model }: { model: Model }) {
                     <div className="body">
                       {t.is_reply && t.reply_to ? <span className="reply-to">↩ {t.reply_to} · </span> : null}
                       {highlight(t.text.replace(/https:\/\/t\.co\/\S+$/g, "").trim())}
-                      {t.quoted_text ? <span className="reply-to"> — QT: “{t.quoted_text.slice(0, 120)}”</span> : null}
+                      {t.quoted_text ? <span className="reply-to"> · QT: “{t.quoted_text.slice(0, 120)}”</span> : null}
                     </div>
                     <div className="meta">
                       <span>

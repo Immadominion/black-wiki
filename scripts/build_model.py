@@ -316,7 +316,10 @@ def main():
         "airdrop_daily": airdrop_daily,
         "price_series": [[int(c[0]), float(c[4])] for c in sorted(candles, key=lambda c: c[0])],
         "recipients": out_recipients,
-        "timeline": dossier.get("timeline", []),
+        "timeline": [
+            {**e, "event": e.get("event", "").replace(" — ", ", ").replace("—", "-")}
+            for e in dossier.get("timeline", [])
+        ],
         "tweets": tweets,
         "archive": archive,
         "viral": viral,

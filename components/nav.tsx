@@ -33,7 +33,7 @@ export function Nav() {
       <div className="wrap nav-in">
         <Link href="/" className="brand">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/token.png" alt="$ANSEM — The Black Bull" className="brand-bull" />
+          <img src="/token.png" alt="$ANSEM, The Black Bull" className="brand-bull" />
           <span className="brand-name">
             Black Bull <em>Ledger</em>
           </span>

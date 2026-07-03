@@ -17,7 +17,7 @@ export default function Overview() {
       <section className="hero">
         <div className="wrap hero-in">
           <div className="rise">
-            <div className="kicker">Ansem vs. the bear market — a live record</div>
+            <div className="kicker">Ansem vs. the bear market · a live record</div>
             <h1>
               One trader is trying to <em>airdrop the bull market</em> into existence.
             </h1>
@@ -26,13 +26,13 @@ export default function Overview() {
               <a href="https://x.com/blknoiz06" target="_blank" rel="noopener noreferrer">
                 Ansem
               </a>{" "}
-              has been manually sending his pump.fun creator fees — as $ANSEM, &ldquo;The Black Bull&rdquo; — to
-              holders&apos; wallets, chasing 1,000,000 holders. This site traces every transfer out of his airdrop
+              has been manually sending his pump.fun creator fees to holders&apos; wallets as $ANSEM, &ldquo;The
+              Black Bull&rdquo;, chasing 1,000,000 holders. This site traces every transfer out of his airdrop
               wallet: who received it, what it was worth at that moment, and whether they kept it.
             </p>
             <div className="hero-cta">
               <Link href="/ledger/" className="btn btn-gold">
-                Open the ledger — {fmtInt(s.unique_recipients)} wallets
+                Open the ledger
               </Link>
               <Link href="/receipts/" className="btn btn-ghost">
                 Read the receipts
@@ -41,7 +41,7 @@ export default function Overview() {
           </div>
           <div className="hero-bull rise rise-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/coin-hero.png" alt="$ANSEM — The Black Bull, the coin's own artwork" className="coin-art" />
+            <img src="/coin-hero.png" alt="$ANSEM, The Black Bull" className="coin-art" />
           </div>
         </div>
       </section>
@@ -81,7 +81,7 @@ export default function Overview() {
               airdrop window
             </span>
             <span>
-              ten quiet days at <b className="mono">$0.0002</b>, then the Jun 27 creator-fee pledge — and a{" "}
+              ten quiet days at <b className="mono">$0.0002</b>, then the Jun 27 creator-fee pledge, and a{" "}
               <b className="mono">~900×</b> run to the <b className="mono">$0.1798</b> ATH on Jul 2
             </span>
           </div>
@@ -97,13 +97,13 @@ export default function Overview() {
             </div>
             <p>
               An anonymous deployer launched the token, gifted Ansem 65% of the supply, and walked away with about
-              $5.5K. Ten days later a follower suggested airdropping the creator fees. Ansem said yes — and the
+              $5.5K. Ten days later a follower suggested airdropping the creator fees. Ansem said yes, and the
               trenches got their stimulus.
             </p>
             <div className="q">
-              &ldquo;we will simply bully them all into airdropping — they have to realize the bull market is
+              &ldquo;we will simply bully them all into airdropping, they have to realize the bull market is
               beginning now&rdquo;
-              <b>— Ansem, Jun 29 · 3.1K likes</b>
+              <b>Ansem, Jun 29 · 3.1K likes</b>
             </div>
             <div className="hero-cta">
               <Link href="/receipts/" className="btn btn-ghost">
@@ -187,7 +187,7 @@ export default function Overview() {
               <p>
                 A copycat &ldquo;ANSEM&rdquo; mint (<span className="mono">BWVL…p7Y7</span>) flashes a fake{" "}
                 <b>$86M</b> of one-sided liquidity on a decoy Raydium pool to bait buyers. The only authentic mint
-                ends in <span className="mono" style={{ color: "var(--accent-bright)" }}>pump</span> — copy it from
+                ends in <span className="mono" style={{ color: "var(--accent-bright)" }}>pump</span>. Copy it from
                 the top bar, never from search.
               </p>
             </div>
@@ -206,9 +206,9 @@ export default function Overview() {
             <ul>
               <li>
                 All {fmtInt(s.total_transfers)} outgoing $ANSEM transfers are read signature-by-signature from the
-                airdrop wallet&apos;s token account on Solana mainnet — no third-party indexers.
+                airdrop wallet&apos;s token account on Solana mainnet, no third-party indexers.
               </li>
-              <li>USD values use the hourly candle close at each transfer&apos;s block time — approximate by nature.</li>
+              <li>USD values use the hourly candle close at each transfer&apos;s block time, approximate by nature.</li>
               <li>Identities come from pump.fun public profiles and SNS (.sol) reverse lookups. No identity is guessed.</li>
               <li>
                 &ldquo;Holding / sold&rdquo; compares a wallet&apos;s current balance against what it received;
@@ -226,7 +226,7 @@ export default function Overview() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  The Defiant — the $7M airdrop
+                  The Defiant · the $7M airdrop
                 </a>
               </li>
               <li>
@@ -235,22 +235,22 @@ export default function Overview() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  The Crypto Times — 7 wallets got 74%
+                  The Crypto Times · 7 wallets got 74%
                 </a>
               </li>
               <li>
                 <a href="https://cryptobriefing.com/ansem-airdrops-7m-ansem-memecoin-solana/" target="_blank" rel="noopener noreferrer">
-                  Crypto Briefing — campaign coverage
+                  Crypto Briefing · campaign coverage
                 </a>
               </li>
               <li>
                 <a href="https://beincrypto.com/ansem-token-creator-fee-airdrop-solana/" target="_blank" rel="noopener noreferrer">
-                  BeInCrypto — the creator-fee pledge
+                  BeInCrypto · the creator-fee pledge
                 </a>
               </li>
               <li>
                 <a href={`https://solscan.io/token/${model.mint}`} target="_blank" rel="noopener noreferrer">
-                  Solscan — verify it yourself
+                  Solscan · verify it yourself
                 </a>
               </li>
             </ul>
