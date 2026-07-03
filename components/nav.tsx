@@ -28,6 +28,7 @@ export function Nav() {
   };
 
   return (
+    <>
     <header className="nav">
       <div className="wrap nav-in">
         <Link href="/" className="brand">
@@ -64,17 +65,18 @@ export function Nav() {
           </button>
         </div>
       </div>
-      <nav className="mobile-tabs">
-        {LINKS.map((l) => (
-          <Link
-            key={l.href}
-            href={l.href}
-            className={path === l.href || (l.href !== "/" && path?.startsWith(l.href.replace(/\/$/, ""))) ? "on" : ""}
-          >
-            {l.label}
-          </Link>
-        ))}
-      </nav>
     </header>
+    <nav className="mobile-tabs">
+      {LINKS.map((l) => (
+        <Link
+          key={l.href}
+          href={l.href}
+          className={path === l.href || (l.href !== "/" && path?.startsWith(l.href.replace(/\/$/, ""))) ? "on" : ""}
+        >
+          {l.label}
+        </Link>
+      ))}
+    </nav>
+    </>
   );
 }
