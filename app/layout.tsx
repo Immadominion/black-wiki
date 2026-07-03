@@ -7,6 +7,7 @@ import { loadModel } from "@/lib/model";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://blackwiki.fun"),
   title: "Black Bull Ledger · every $ANSEM airdrop, receipts attached",
   description:
     "The full record of Ansem's $ANSEM airdrop campaign: every onchain transfer, who received it, whether they kept it, and the tweets that made it happen.",
@@ -15,6 +16,14 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
+    title: "Black Bull Ledger",
+    description: "Every $ANSEM airdrop Ansem has sent, traced onchain. The story, the wallets, the receipts.",
+    url: "https://blackwiki.fun",
+    siteName: "Black Bull Ledger",
+    images: ["/coin-hero.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
     title: "Black Bull Ledger",
     description: "Every $ANSEM airdrop Ansem has sent, traced onchain. The story, the wallets, the receipts.",
     images: ["/coin-hero.png"],
