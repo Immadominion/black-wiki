@@ -1,4 +1,4 @@
-# Design System — Black Bull Ledger ("Night Bull" theme)
+# Design System — blackwiki.fun ("Night Bull" theme)
 
 Source of truth for all visual decisions. Structural DNA adapted from the
 Touchline direction (dense dashboard, floating shell, mono numbers, proof

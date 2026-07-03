@@ -35,7 +35,7 @@ export function Nav() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/token.png" alt="$ANSEM, The Black Bull" className="brand-bull" />
           <span className="brand-name">
-            Black Bull <em>Ledger</em>
+            blackwiki<em>.fun</em>
           </span>
         </Link>
         <nav className="nav-links">

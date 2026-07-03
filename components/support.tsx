@@ -5,7 +5,7 @@ import { useState } from "react";
 const SKR_NAME = "heisjoel.skr";
 // resolved onchain from heisjoel.skr (AllDomains) so copy gives a raw address
 const SKR_ADDRESS = "3hqiCoEipSWk69Mx1iPWjxjCvNRPTYEbENSBpkWtLsAG";
-const PAY_URL = `solana:${SKR_ADDRESS}?label=${encodeURIComponent("Black Bull Ledger")}&message=${encodeURIComponent("Support the ledger")}`;
+const PAY_URL = `solana:${SKR_ADDRESS}?label=${encodeURIComponent("blackwiki.fun")}&message=${encodeURIComponent("Support the ledger")}`;
 
 export function Support() {
   const [copied, setCopied] = useState(false);

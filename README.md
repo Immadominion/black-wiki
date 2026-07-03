@@ -1,4 +1,4 @@
-# Black Bull Ledger
+# blackwiki.fun
 
 Public dashboard tracking **Ansem's ($ANSEM / "The Black Bull") airdrop campaign** on
 Solana — every transfer out of his airdrop wallet, who received it, what it was worth

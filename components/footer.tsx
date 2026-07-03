@@ -6,7 +6,7 @@ export function Footer({ generatedAt }: { generatedAt?: string }) {
       <Support />
       <div className="wrap foot-in">
         <div>
-          <div className="foot-brand">Black Bull Ledger</div>
+          <div className="foot-brand">blackwiki.fun</div>
           <p>
             Independent community record of the $ANSEM airdrop campaign. Every figure is derived from Solana
             mainnet or archived from X. Verify anything on{" "}
