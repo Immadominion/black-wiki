@@ -1,0 +1,224 @@
+{
+  "token": {
+    "name": "The Black Bull",
+    "symbol": "ANSEM",
+    "real_mint": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+    "decimals": 6,
+    "supply": "999961749.112082 (ui amount; ~1B nominal; mint & freeze authority renounced; Token-2022 program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb)",
+    "creator_wallet": "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
+    "launch_date": "2026-06-16T21:05:48Z",
+    "pumpfun_metadata": {
+      "mint": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+      "name": "The Black Bull",
+      "symbol": "ANSEM",
+      "description": "",
+      "image_uri": "https://edge.uxento.io/image/Cx83EqERns2VuiKrkwHegTuECVqZebsNhJ3dCU8CucWG",
+      "metadata_uri": "https://meta.uxento.io/data/7f4c8448-c38e-4c34-aa37-a28cff9806d0",
+      "twitter": "https://x.com/Donnieonchain/status/2066990360115683402",
+      "telegram": null,
+      "website": null,
+      "creator": "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
+      "created_timestamp_iso": "2026-06-16T21:05:48Z",
+      "complete": true,
+      "bonding_curve": "FxC6pJJSiu6efSn8PmBMQjQaYm6dkSqmQYohui6NPnrf",
+      "associated_bonding_curve": "6h19hTXkE4TYCUR3arffCgAN61eRNrJn12cZGzx3bDHk",
+      "pump_swap_pool": "FnzKY6x7entQ1eR3D225dQyT7ybfka4PskBMQhb8L3CC",
+      "raydium_pool": null,
+      "usd_market_cap": 175941312.31,
+      "ath_market_cap_usd": 182039178.88,
+      "ath_market_cap_timestamp_iso": "2026-07-02T11:58:42Z",
+      "is_banned": false,
+      "nsfw": false,
+      "notes": "Onchain Token-2022 metadata reads name='The Black Bull', symbol='ANSEM'. CoinGecko id 'the-black-bull' (rank ~333) lists exactly this contract. DexScreener info block adds later community socials: website https://www.blackbullsol.com/, X https://x.com/blackbullsol, Telegram https://t.me/blackbullsolana. IMPORTANT: token created by an anonymous deployer, NOT by Ansem — deployer spent ~$6.3K, bought 792.45M tokens, sent 650M (~65% of supply) to Ansem's wallet, sold remaining 142.45M for ~$11.8K, netting ~$5.5K (Lookonchain)."
+    }
+  },
+  "copycat_mints": [
+    {
+      "mint": "BWVLAfrGMbu3oUsza5ZWHcysDZPfB3hPyNfUCPv1p7Y7",
+      "verdict": "CONFIRMED copycat/decoy — NOT a migrated official pool",
+      "created": "~2026-06-27/28 (its single Raydium CLMM pool created 2026-06-28T01:43:27Z, during the real token's breakout)",
+      "evidence": [
+        "Classic SPL token (real ANSEM is Token-2022 via pump.fun); no matching metadata; no CoinGecko listing",
+        "Only 1,143 token accounts total (real mint has thousands, >3,000 sampled without exhausting)",
+        "Supply 999,960,532 chosen to mimic the real mint's supply; even mirrors the real token's ~58% top-holder profile",
+        "99.96% of supply in two accounts: 582.85M (58.3%) in Raydium CLMM pool vault EXH9QTUmK4PRKMd2xJfLqy3iZoKXxLov4JKmaPpUuxmT and 416.13M (41.6%) in deployer wallet DdoCXsaRqk1aS2TVjGxeE6yTMX2bmC5hhcsqwAyuVNBT",
+        "The '$86M liquidity' (DexScreener claims $86,489,365) is one-sided CLMM depth denominated almost entirely in the copycat token itself — only 0.1362 USDC on the quote side; 24h volume $3.35 from 29 txns",
+        "All other holders have dust balances (3k-6k tokens), typical of spam/bait airdrops"
+      ]
+    },
+    {
+      "mint": "unspecified (multiple)",
+      "verdict": "Press (The Defiant, Crypto Times, Coinsprobe/MEXC, crypto.news, Crypto Briefing) uniformly warn multiple ANSEM-named variants trade on Solana and buyers of wrong contracts lost money instantly; unrelated CoinGecko-listed lookalikes include 'Ansems Dog', 'Ansem's Cat', 'ANSEM ARMY'"
+    }
+  ],
+  "market": {
+    "price_usd": 0.1766,
+    "market_cap": "circulating ~$73.1M (circ supply ~415.7M of ~1B); FDV ~$176.6M",
+    "liquidity": "~$4.55M real USD liquidity across 30 DEX pairs (top: PumpSwap ANSEM/SOL $1.68M, Meteora ANSEM/SOL $1.42M + $0.64M + $0.43M, Meteora ANSEM/USDC $0.15M). The $86M 'liquidity' figure belongs to the copycat BWVL pool and is spoofed one-sided depth.",
+    "volume_24h": "~$31-36M organic (GeckoTerminal $31.25M; CoinGecko $35.53M incl. CEX tickers e.g. MEXC ANSEM/USDT ~$1.23M; DexScreener's $69.3M sum includes an unreliable $11.7M Orca HYPE/ANSEM pair on ~$10K liquidity)",
+    "ath": "$0.179815 on 2026-07-02T12:00Z (ATH mcap ~$182M per pump.fun API at 11:58:42Z); prior press-reported ATH $0.121-$0.129 on 2026-06-29 was surpassed July 1-2. ATL $0.0001441 on 2026-06-25T10:24Z (+120,195% since). Daily closes: 06-27 $0.0088, 06-28 $0.089, 06-29 $0.124, 06-30 $0.136, 07-01 $0.155, 07-02 $0.176. 24h change +21.9%; 7d +104,394%.",
+    "as_of": "2026-07-02T13:52Z (DexScreener/GeckoTerminal/CoinGecko snapshot)"
+  },
+  "airdrop": {
+    "total_value_estimates": [
+      {"value": "~$6.7M to 700+ wallets", "source": "Bubblemaps, 2026-06-29"},
+      {"value": "~$7M (Ansem's own figure, tweet 2071573866875429166)", "source": "Ansem, 2026-06-29"},
+      {"value": "67.38M ANSEM = ~$9.43M to 704 wallets (includes later rounds)", "source": "Lookonchain, 2026-06-30"}
+    ],
+    "recipient_count_estimates": ["700+ (Bubblemaps/Lookonchain)", "704 wallets (Lookonchain, 2026-06-30)", "'hundreds of wallets' (Crypto Briefing)"],
+    "dates": "2026-06-27 to 2026-06-29 (main campaign window), with continued rounds pledged weekly and price-contingent ('will do more as market cap goes higher')",
+    "mechanics": "Funded from Ansem's pump.fun creator fees (profile 'ansemconzimp'; ~$200K-$378K/week, ~$378,210 accumulated by June 28), framed as a redistribution of creator fees rather than a token sale. Entry per Ansem's June 27 tweet: retweet + follow his pump.fun profile + comment with your pump.fun profile; winners picked randomly weekly. NOT a 'drop your wallet address' scheme. Distribution tiers per Bubblemaps (06-29): 1 wallet >$1M, 6 wallets >$100K, 40 >$10K, 300 >$1K, 400 >$150; minimum ~$23 per recipient; larger rewards reportedly tied to social engagement. Stated goal: grow holders from ~25,000 to 1,000,000.",
+    "concentration_concerns": "Lookonchain (2026-06-30): 49.89M of 67.38M airdropped tokens (~74%, worth $6.98M) went to just 7 wallets; those 7 had already sold 38.29M tokens for $1.29M and still held 11.6M (~$1.62M). Across all 704 recipients: 52.8% had not sold, 20.6% partially sold, 26.6% fully liquidated. Broader concern: the airdrop-funding wallet holds ~58-60% of total supply (onchain: GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52 holds 584.27M = 58.43%; Arkham said 58.7% remaining after airdrops), making the campaign 'both a marketing engine and a concentration risk' (The Defiant). The 7 dumping wallets' addresses were never published."
+  },
+  "ansem": {
+    "handle": "@blknoiz06",
+    "user_id": "973261472",
+    "bio": "Real name Zion Thomas. BS Computer Science, Georgia Tech (~2017); software engineer at Capital One; amateur boxer; entered crypto 2017; Head of Research at TCG Crypto (blockchain arm of The Chernin Group) per Phemex. Known as 'King of Solana Memes'.",
+    "followers": "~1M-1.07M (press 'close to 1 million'; task context 1.07M; Phemex says >750,000 — likely stale)",
+    "background": "Famous for calling SOL near $1.50-$8 pre-rally (2023: $8 to ~$300), Dogwifhat/WIF early (~520x reported; called at $100K mcap, peaked $4.8B), ~80x on BONK. Estimated net worth ~$20-30M (2026 trackers). Controversies: Oct 2024 ZachXBT accusation of promoting low-cap memecoins (BODEN, HOBBES, ZEUS, WYNN — all later down >98%) in pump-and-dump-like fashion; unproven, no formal findings; Ansem admitted supporting some celebrity memecoins 'was a mistake'. His identity was used in a 2024 impersonation phishing scam (~$2.5M victim losses). He did NOT create $ANSEM: on 2026-06-16 he tweeted he had linked his X to a pump.fun account and was 'not endorsing any microcaps'; an anonymous deployer sent ~65% of supply to his wallet, and he later leaned in, pledging creator-fee airdrops."
+  },
+  "wallets": [
+    {
+      "address": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+      "label": "AUTHENTIC $ANSEM 'The Black Bull' mint — pump.fun Token-2022, created 2026-06-16T21:05:48Z, bonded and migrated to PumpSwap; CoinGecko-listed ('the-black-bull')",
+      "sources": ["pump.fun frontend-api-v3", "onchain Token-2022 metadata", "CoinGecko cg_coin", "Bitget/Coinsprobe article", "DexScreener"]
+    },
+    {
+      "address": "yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe",
+      "label": "Anonymous deployer/creator of $ANSEM ('yHCxHB' per Lookonchain) — spent ~$6.3K to launch, bought 792.45M tokens, transferred 650M (~65% of supply) to Ansem, sold remaining 142.45M for ~$11.8K, netted ~$5.5K; currently holds ~241 SOL",
+      "sources": ["pump.fun API creator field (onchain)", "Lookonchain tweet 2071422705262543187", "The Defiant", "Grafa (via Lookonchain/GMGN)"]
+    },
+    {
+      "address": "GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52",
+      "label": "Top holder — 584.27M ANSEM = 58.43% of supply, plain system wallet with 8,078 SOL (token account 2U9XFtekYTstzMYXmuyDCNdFxRYB91dMtSKxtUB5rVct). Almost certainly Ansem's wallet / the airdrop source: matches press '~604M/60%' (pre-airdrop) and Arkham's '58.7% remaining after airdrops'. Linked pump.fun profile handle: 'ansemconzimp'. Direct attribution to Ansem is strong inference, not a published disclosure.",
+      "sources": ["onchain DAS holder scan", "Arkham tweet 2071730723568926765", "Bubblemaps via The Defiant", "Grafa/GMGN"]
+    },
+    {
+      "address": "CxCTVjvgK3bWcgavMKo8PushR8ycw1atrWiSTruZrdtT",
+      "label": "'261x trader' — bought 14.2M ANSEM for $2,330, sold 4.2M for ~$68K, still held ~10M (~$548K); total ~$614.5K",
+      "sources": ["Lookonchain tweet 2071128989473837440", "Bitget/Coinsprobe", "MEXC", "Crypto Briefing"]
+    },
+    {
+      "address": "FnzKY6x7entQ1eR3D225dQyT7ybfka4PskBMQhb8L3CC",
+      "label": "Official PumpSwap ANSEM/SOL migration pool (pump.fun graduation destination, created 2026-06-16T21:05:48Z); holds 4.75M ANSEM; ~$1.68M liquidity",
+      "sources": ["pump.fun API pump_swap_pool field", "GeckoTerminal launchpad_details", "DexScreener"]
+    },
+    {
+      "address": "6e7V9eegCHw997T72MxgwwJipZ6GJyZF8NvjkzT1rvpN",
+      "label": "Meteora ANSEM/SOL pool — current top pool by 24h volume (~$16.2M), created 2026-06-28T06:33Z",
+      "sources": ["DexScreener", "GeckoTerminal"]
+    },
+    {
+      "address": "BWVLAfrGMbu3oUsza5ZWHcysDZPfB3hPyNfUCPv1p7Y7",
+      "label": "COPYCAT/DECOY ANSEM mint — classic SPL token created ~June 27-28, 1,143 token accounts, spoofed $86M one-sided liquidity, $3.35 24h volume",
+      "sources": ["onchain DAS scan", "DexScreener dexscreener_bwvl.json", "GeckoTerminal"]
+    },
+    {
+      "address": "EXH9QTUmK4PRKMd2xJfLqy3iZoKXxLov4JKmaPpUuxmT",
+      "label": "Raydium CLMM ANSEM/USDC decoy pool for the BWVL copycat (created 2026-06-28T01:43:27Z; vault token account FLNDTgV5pyadxJBUFqq8xReAzwXmZVMu4CEVZjd4Eu8R holds 582.85M copycat tokens vs 0.1362 USDC; PDA of Raydium CLMM program CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK)",
+      "sources": ["onchain scan", "DexScreener", "GeckoTerminal"]
+    },
+    {
+      "address": "DdoCXsaRqk1aS2TVjGxeE6yTMX2bmC5hhcsqwAyuVNBT",
+      "label": "Likely deployer of the BWVL copycat — holds 416.13M copycat tokens (41.6% of that supply)",
+      "sources": ["onchain DAS holder scan"]
+    },
+    {
+      "address": "CLM6E4zpTviEC77nWKogpVLQoXx9tgoQCYJ8NibxKg1Q",
+      "label": "2nd largest real-ANSEM holder wallet — 10.53M (1.05%); plain wallet, possibly a large airdrop recipient",
+      "sources": ["onchain DAS holder scan"]
+    },
+    {
+      "address": "7KQP2n1DfYVicg5DGsbrJHiUfbxjG76NtyPri4c1B9Sg",
+      "label": "3rd largest real-ANSEM holder wallet — 10.10M (1.01%)",
+      "sources": ["onchain DAS holder scan"]
+    },
+    {
+      "address": "8wLPuPpZgbxnhTMiMG3suqsQgYQ1oy1s8nVYJjaT33m4",
+      "label": "4th largest real-ANSEM holder wallet — 5.20M (0.52%); long tail below is flat 2.5-3.3M per account, consistent with airdrop recipients",
+      "sources": ["onchain DAS holder scan"]
+    },
+    {
+      "address": "ansemconzimp (pump.fun profile handle, not a base58 address)",
+      "label": "Ansem's linked pump.fun profile — receives the creator fees funding the airdrops; received ~65% of supply per Arkham; followers must follow it to enter weekly draws",
+      "sources": ["Ansem tweet 2070871430191800832", "Arkham tweet 2071730723568926765", "Bitget/Coinsprobe"]
+    }
+  ],
+  "timeline": [
+    {"date": "2024-10", "event": "ZachXBT publicly accuses Ansem of promoting low-cap Solana memecoins (BODEN, HOBBES, ZEUS, WYNN — all later down >98%) to his then-500K+ followers; Ansem rejects it, citing his WIF call ($100K mcap → $4.8B peak). Unproven, no formal findings.", "sources": ["https://x.com/zachxbt/status/1842618673174814970", "Crypto Times", "The Defiant"]},
+    {"date": "2026-06-16 20:59 UTC", "event": "Ansem tweets he linked his X to a pump.fun account: 'the other one is not me... im not endorsing any microcaps' — initially distancing himself.", "sources": ["https://x.com/blknoiz06/status/2066989048497905753"]},
+    {"date": "2026-06-16 21:05:48 UTC", "event": "$ANSEM 'The Black Bull' (9cRC...pump) created on pump.fun by anonymous wallet yHCxHB...; bonds and migrates to PumpSwap pool FnzKY6.... Deployer spends ~$6.3K, buys 792.45M tokens, sends 650M (~65%) to Ansem's wallet, sells 142.45M for ~$11.8K, nets ~$5.5K. (Press said 'around June 17'; onchain timestamp is June 16.)", "sources": ["pump.fun API (onchain)", "Lookonchain tweet 2071422705262543187", "The Defiant", "Grafa"]},
+    {"date": "2026-06-21 to 2026-06-26", "event": "Token trades quietly at $0.0002-0.0008 (sub-$1M FDV); all-time low $0.0001441 on 2026-06-25T10:24Z.", "sources": ["CoinGecko market chart"]},
+    {"date": "2026-06-26 20:38 UTC", "event": "@Clive_99 tweets that Ansem should airdrop creator fees to holders — the suggestion Ansem quote-tweets the next day.", "sources": ["https://x.com/Clive_99/status/2070607672785744258"]},
+    {"date": "2026-06-27 14:06 UTC", "event": "CATALYST: Ansem announces he will airdrop pump.fun creator fees ('retweet + follow me on there + comment with your pump profile & ill pick randomly weekly'). $ANSEM rallies from ~$173K to $8.6M mcap same day; Meteora pools spin up.", "sources": ["https://x.com/blknoiz06/status/2070871430191800832", "https://x.com/PumpfunEco/status/2070886846566129925", "BeInCrypto"]},
+    {"date": "2026-06-27 to 2026-06-29", "event": "Main airdrop campaign: ~$6.7-7M of $ANSEM sent to 700+ wallets (min ~$23 each), funded by creator fees; goal to grow holders from ~25K to 1M.", "sources": ["Crypto Briefing", "Bubblemaps via The Defiant", "MEXC"]},
+    {"date": "2026-06-28 01:43 UTC", "event": "Copycat BWVL mint's single Raydium CLMM pool created during the breakout, with spoofed one-sided '$86M liquidity' to bait mistaken buyers.", "sources": ["onchain pairCreatedAt", "DexScreener"]},
+    {"date": "2026-06-28 03:21 UTC", "event": "Ansem tweets 'had to give the trenches a stimmy since pump refuses to' as first airdrop rounds land. Same day: Ash Crypto notes $173K→$109M mcap in 24h (630x) 'in the middle of the bear market'; $ANSEM tops pump.fun 24h volume ($60M); Lookonchain flags the 261x trader; Ansem tweets copycat coins 'should airdrop to $ANSEM holders'; mcap reported ~$66M.", "sources": ["https://x.com/blknoiz06/status/2071071494801633690", "https://x.com/AshCrypto/status/2071329637108441244", "https://x.com/PumpfunEco/status/2071216496911712323", "https://x.com/lookonchain/status/2071128989473837440", "https://x.com/blknoiz06/status/2071202382239686687"]},
+    {"date": "2026-06-29 12:37 UTC", "event": "Ansem tweets: airdropped ~$7M so far, will do more as mcap rises; goal 1M holders vs ~25K now. Same day: press-cycle ATH ~$0.121-0.129 (FDV briefly >$120M, 24h vol $80-91M); Bubblemaps posts distribution tiers and ~60% Ansem concentration; Lookonchain shows deployer made only $5.5K; Arkham: Ansem up $75M, 'ansemconzimp' sent 65% of supply, 58.7% remaining after airdrops; ANSEM perps launch on Aster DEX (5x); The Defiant publishes.", "sources": ["https://x.com/blknoiz06/status/2071573866875429166", "https://x.com/bubblemaps/status/2071608832728686966", "https://x.com/lookonchain/status/2071422705262543187", "https://x.com/arkham/status/2071730723568926765", "https://x.com/cryptodotnews/status/2071647886870184009", "The Defiant"]},
+    {"date": "2026-06-30", "event": "CONCENTRATION EXPOSED: Lookonchain reports 67.38M ANSEM (~$9.43M) airdropped to 704 wallets, with 49.89M (~74%, $6.98M) to just 7 wallets that already sold 38.29M for $1.29M; 26.6% of recipients fully liquidated. Crypto Times and MEXC publish critical coverage; token trades ~$0.136-0.14.", "sources": ["https://x.com/lookonchain/status/2071755661160202578", "https://x.com/cryptodotnews/status/2071863248391917854", "Crypto Times", "MEXC"]},
+    {"date": "2026-07-01", "event": "Pump.fun records highest daily launches/graduations in 80 days, driven by $ANSEM, reversing a 3-month ~80% activity slump; multiple ANSEM-named variants proliferate; begging culture peaks (e.g. SuiLFG 'letter to Ansem'); price closes ~$0.155.", "sources": ["Crypto Briefing (Jul 1)", "https://x.com/SuiLFG_/status/2072294275551764956", "CoinGecko"]},
+    {"date": "2026-07-02", "event": "New all-time high $0.179815 (~12:00 UTC; ATH mcap ~$182M / FDV basis), surpassing the June 29 peak. As of ~13:52 UTC: price ~$0.1766, circulating mcap ~$73.1M, FDV ~$176.6M, real DEX liquidity ~$4.55M, 24h volume ~$31-36M.", "sources": ["CoinGecko", "pump.fun API", "DexScreener/GeckoTerminal"]}
+  ],
+  "key_tweets": [
+    {"url": "https://x.com/blknoiz06/status/2066989048497905753", "id": "2066989048497905753", "date": "2026-06-16T20:59:26Z", "summary": "Ansem links his X to a pump.fun account; disavows 'the other one' and says he is not endorsing microcaps — posted minutes before the real mint's creation."},
+    {"url": "https://x.com/Clive_99/status/2070607672785744258", "id": "2070607672785744258", "date": "2026-06-26T20:38:33Z", "summary": "Community suggestion that Ansem airdrop creator fees to holders; the tweet Ansem quote-tweeted to start the saga."},
+    {"url": "https://x.com/blknoiz06/status/2070871430191800832", "id": "2070871430191800832", "date": "2026-06-27T14:06:38Z", "summary": "THE CATALYST: Ansem pledges to airdrop creator fees; mechanics = retweet + follow pump.fun profile 'ansemconzimp' + comment with pump profile; weekly random picks."},
+    {"url": "https://x.com/blknoiz06/status/2071071494801633690", "id": "2071071494801633690", "date": "2026-06-28T03:21:37Z", "summary": "'had to give the trenches a stimmy since pump refuses to' — closest primary source to the press's 'reviving the bull market' framing."},
+    {"url": "https://x.com/blknoiz06/status/2071202382239686687", "id": "2071202382239686687", "date": "2026-06-28", "summary": "Ansem says new coins launching off the attention should airdrop to $ANSEM holders; spawned derivative projects (e.g. ansemsarmy.com)."},
+    {"url": "https://x.com/blknoiz06/status/2071573866875429166", "id": "2071573866875429166", "date": "2026-06-29T12:37:52Z", "summary": "KEY TWEET: '~$7M airdropped so far, will do more as market cap goes higher; goal 1M holders, currently ~25k' (17.5K likes at capture); quoted by The Defiant and others."},
+    {"url": "https://x.com/blknoiz06/status/2071349876256887063", "id": "2071349876256887063", "date": "2026-06-28", "summary": "Market Bubble Ep. 8 highlights: 'letter to the trenches', Solana outlook, 4-year cycle — his broader bull-market narrative vehicle during the airdrop window."},
+    {"url": "https://x.com/lookonchain/status/2071128989473837440", "id": "2071128989473837440", "date": "2026-06-28", "summary": "Lookonchain: trader CxCTVj... turned $2.33K into $614.5K (261x)."},
+    {"url": "https://x.com/lookonchain/status/2071422705262543187", "id": "2071422705262543187", "date": "2026-06-29", "summary": "Lookonchain: deployer 'yHCxHB' created a $120M+ token but made only $5.5K; transferred 650M ANSEM to @blknoiz06."},
+    {"url": "https://x.com/arkham/status/2071730723568926765", "id": "2071730723568926765", "date": "2026-06-29", "summary": "Arkham: Ansem up $75M; pump.fun account 'ansemconzimp' sent 65% of supply, 58.7% remaining after airdrops."},
+    {"url": "https://x.com/lookonchain/status/2071755661160202578", "id": "2071755661160202578", "date": "2026-06-30", "summary": "Lookonchain concentration exposé: 67.38M ANSEM ($9.43M) to 704 wallets; 74% to 7 wallets that were already dumping."},
+    {"url": "https://x.com/AshCrypto/status/2071329637108441244", "id": "2071329637108441244", "date": "2026-06-28", "summary": "Ash Crypto: $173K → $109M mcap in 24h (630x) — framed as happening 'in the middle of the bear market', undercutting the bull-revival narrative."},
+    {"url": "https://x.com/PumpfunEco/status/2070886846566129925", "id": "2070886846566129925", "date": "2026-06-27", "summary": "PumpfunEco: $ANSEM rallied to $8.6M mcap after the creator-fee announcement."},
+    {"url": "https://x.com/Supermanonchain/status/2071581476207182216", "id": "2071581476207182216", "date": "2026-06-29T13:08:06Z", "summary": "@Supermanonchain claims to be 'the dev behind The Black Bull' and of a TJR copycat coin; unverified self-claim."},
+    {"url": "https://x.com/dfw_lushion/status/2071616630224814291", "id": "2071616630224814291", "date": "2026-06-29T15:27:48Z", "summary": "Viral airdrop-begging quote-tweet ('my name is Orogun Anselm...'); its quoted_tweet field recovered the ID of Ansem's $7M tweet."},
+    {"url": "https://x.com/SuiLFG_/status/2072294275551764956", "id": "2072294275551764956", "date": "2026-07-01T12:20:31Z", "summary": "'A letter to Ansem' — Sui project publicly begs for an airdrop lifeline; illustrates the begging culture the airdrops created."},
+    {"url": "https://x.com/zachxbt/status/1842618673174814970", "id": "1842618673174814970", "date": "2024-10", "summary": "ZachXBT's accusation thread on Ansem's memecoin promotions (historical context, re-cited in June 2026 coverage)."},
+    {"url": "https://x.com/cryptodotnews/status/2071863248391917854", "id": "2071863248391917854", "date": "2026-06-30", "summary": "crypto.news: '$ANSEM airdrop under scrutiny after seven wallets received nearly 50 million tokens.'"}
+  ],
+  "quotes": [
+    {"text": "there's enough good tokens that exist already, but sure i will airdrop portions of the creator fees that have been directed to my pump fun profile. retweet this + follow me on there + comment with your pump profile & ill pick randomly weekly", "who": "Ansem (@blknoiz06)", "context": "June 27, 2026 announcement that triggered the rally (quote-tweeting @Clive_99)", "source": "https://x.com/blknoiz06/status/2070871430191800832 (verified via syndication API)"},
+    {"text": "had to give the trenches a stimmy since pump refuses to", "who": "Ansem (@blknoiz06)", "context": "June 28, 2026, as first airdrop rounds went out; the actual primary source behind press 'stimulus'/'bull revival' framing", "source": "https://x.com/blknoiz06/status/2071071494801633690"},
+    {"text": "sent out another round of the airdrops, have airdropped about ~$7M so far, will do more as market cap goes higher. Goal is to get $ANSEM to 1M holders, currently at ~25k holders.", "who": "Ansem (@blknoiz06)", "context": "June 29, 2026 — the key airdrop-total/holder-goal tweet", "source": "https://x.com/blknoiz06/status/2071573866875429166"},
+    {"text": "i just linked my X to a pumpfun account, the other one is not me they did it on their own internal side to that other wallet. im not endorsing any microcaps, just to prove that i can connect my X to an address on the app.", "who": "Ansem (@blknoiz06)", "context": "June 16, 2026 — initial distancing on launch day", "source": "https://x.com/blknoiz06/status/2066989048497905753"},
+    {"text": "Ansem(@blknoiz06) has airdropped 67.38M $ANSEM ($9.43M) to 700+ wallets. 49.89M $ANSEM ($6.98M) went to just 7 wallets. These 7 wallets have already sold 38.29M $ANSEM ($5.36M now) for $1.29M and still hold 11.6M $ANSEM ($1.62M).", "who": "Lookonchain", "context": "June 30, 2026 concentration exposé", "source": "https://x.com/lookonchain/status/2071755661160202578"},
+    {"text": "Ansem is up $75M on $ANSEM. The pumpfun account \"ansemconzimp\" is up $73.8M after being sent 65% of the supply of ANSEM. After sending out airdrops, he has 58.7% of the supply remaining.", "who": "Arkham", "context": "June 29, 2026 — matches the onchain 58.43% top-holder reading", "source": "https://x.com/arkham/status/2071730723568926765"},
+    {"text": "The $ANSEM deployer \"yHCxHB\" created a $120M+ token but made only $5.5K himself.", "who": "Lookonchain", "context": "June 29, 2026 — confirms Ansem did not deploy the token", "source": "https://x.com/lookonchain/status/2071422705262543187"},
+    {"text": "$ANSEM is a fascinating example of tokenized attention and reputation ... You can opt out and simply not buy. If you bought and lost money, all you can blame is yourself.", "who": "Ignas (DeFi researcher)", "context": "Quoted by The Defiant; also warned most such tokens fail with 'no revenue or business tied to them'", "source": "The Defiant"},
+    {"text": "a perfect reminder that one of the biggest unsolved markets in crypto is letting people speculate on other people", "who": "0xNairolf", "context": "Quoted by The Defiant; 'whoever cracks that is the next pumpfun'", "source": "https://x.com/0xNairolf/status/2071553167871938919"},
+    {"text": "Ansem token went from $173,000 market cap to $109 Million in the past 24 hours... Literally in a middle of the bear market.", "who": "Ash Crypto", "context": "June 28, 2026 — note the BEAR market framing vs. 'reviving the bull market'", "source": "https://x.com/AshCrypto/status/2071329637108441244"},
+    {"text": "supporting some celebrity-backed memecoins was a mistake", "who": "Ansem (paraphrase reported by Crypto Times)", "context": "Ansem's admission regarding earlier promotions that hurt retail", "source": "Crypto Times"}
+  ],
+  "open_questions": [
+    "Is GV6UUmNxz2RpKxmNAPadYKb7uQpszwqQAu3qLJxVdC52 definitively Ansem's wallet? Onchain holdings (584.27M = 58.43%) match Arkham's 58.7% and press '~604M/60%' pre-airdrop figures closely, but no source published the base58 address with an explicit Ansem attribution; treat as strong inference.",
+    "Who are the 7 wallets that received ~74% of the airdrop and dumped? Lookonchain never published their addresses; whether they are insiders, sybil clusters, or engagement-farm winners is unknown.",
+    "Who deployed the token? yHCxHBEaJW5tbndqC8JciSThr7U1cqLpdcsvHcx6PRe is anonymous; @Supermanonchain's self-claim (tweet 2071581476207182216) is unverified. Any coordination with Ansem pre-launch is unproven.",
+    "Airdrop total conflict: $6.7M (Bubblemaps 06-29) vs ~$7M (Ansem 06-29) vs $9.43M (Lookonchain 06-30). Likely different snapshots/rounds, but exact per-round amounts and full recipient list were never published.",
+    "The 'reviving the bull market' framing has no literal primary source — exhaustive tweet searches found only the 'stimmy' tweet and mcap-contingent airdrop pledge; Ash Crypto explicitly framed the pump as happening in a bear market.",
+    "Market cap discrepancies ($43M vs $66M vs $125M+ across press) stem from circulating-vs-FDV confusion; The Defiant flagged this explicitly. Circulating supply (~415.7M) vs Ansem's ~58% holding also don't fully reconcile across aggregators.",
+    "Ansem follower count: 750K (Phemex, likely stale) vs ~1M (most press) vs 1.07M (task context).",
+    "Was the BWVL copycat pool created to bait buyers specifically, and by whom (DdoCXsaRqk1aS2TVjGxeE6yTMX2bmC5hhcsqwAyuVNBT)? Motive and operator unidentified.",
+    "Sustainability: weekly creator-fee airdrops (~$200-378K/week) vs the ~$7-9.4M already distributed implies most of the airdrop came from token holdings, not just fees — the exact funding split was never itemized.",
+    "Press launch-date conflict: 'around June 17' (Lookonchain via Defiant/Crypto Times) vs onchain 2026-06-16T21:05:48Z — resolved in favor of onchain (June 16)."
+  ],
+  "sources": [
+    "onchain: Solana RPC/DAS holder scans, Token-2022 metadata, pump.fun frontend-api-v3 (mint 9cRC...pump)",
+    "market data: DexScreener, GeckoTerminal, CoinGecko (id 'the-black-bull', 30d market chart), as of 2026-07-02",
+    "https://thedefiant.io/news/defi/ansem-airdrops-usd7m-of-usdansem-memecoin-in-bid-to-reach-1m-holders (2026-06-29)",
+    "https://www.cryptotimes.io/2026/06/30/ansems-9-43m-ansem-airdrop-7-wallets-got-74-already-dumping/ (2026-06-30)",
+    "https://cryptobriefing.com/ansem-airdrops-7m-ansem-memecoin-solana/ (2026-06-29)",
+    "https://cryptobriefing.com/solana-token-launches-ansem-memecoin/ (2026-07-01)",
+    "https://crypto.news/what-is-ansem-coin-solana-influencer-memecoin-explained/ (2026-06-29)",
+    "https://crypto.news/the-black-bull-ansem-price-prediction-2026/ (2026-07-01)",
+    "https://www.mexc.com/crypto-pulse/article/what-is-ansem-the-black-bull-the-solana-memecoin-that-exploded-600x-and-the-risks-behind-the-hype-124612 (2026-06-30)",
+    "https://grafa.com/en/news/crypto/ansem-token-creator-made-5-5k-profit (2026-06-29)",
+    "https://www.bitget.com/amp/news/detail/12560605480638 (syndicated Coinsprobe, 2026-06-28)",
+    "https://coinsprobe.com/ansem-the-black-bull-goes-parabolic-as-ansem-announces-creator-fee-airdrops-trader-made-261x-gains/ (2026-06-28; live price widget observed 2026-07-02)",
+    "https://beincrypto.com/ansem-token-creator-fee-airdrop-solana/ (2026-06-29)",
+    "https://phemex.com/academy/who-is-ansem-solana-trader-ansem-token-frenzy (updated 2026-07-02)",
+    "X/Twitter primary sources verified via cdn.syndication.twimg.com and publish.x.com/oembed: @blknoiz06 (2066989048497905753, 2070871430191800832, 2071071494801633690, 2071202382239686687, 2071349876256887063, 2071573866875429166), @lookonchain (2071128989473837440, 2071422705262543187, 2071755661160202578), @arkham (2071730723568926765), @bubblemaps (2071608832728686966), @AshCrypto (2071329637108441244), @PumpfunEco (2070886846566129925, 2071216496911712323), @Clive_99 (2070607672785744258), @Supermanonchain (2071581476207182216), @dfw_lushion (2071616630224814291), @SuiLFG_ (2072294275551764956), @cryptodotnews (2071147078319812866, 2071647886870184009, 2071863248391917854), @zachxbt (1842618673174814970), @0xNairolf (2071553167871938919)"
+  ]
+}
