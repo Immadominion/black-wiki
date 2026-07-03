@@ -426,6 +426,15 @@ button { font: inherit; }
   .stat { padding-top: 18px; padding-bottom: 16px; }
 }
 
+/* coarse pointers get real touch targets */
+@media (pointer: coarse) {
+  .pill { padding: 10px 16px; }
+  .mint-tag { padding: 10px 4px; }
+  .nav-link { padding: 12px 12px; }
+  .feed-row .meta a, .row .addr a, .wline a { padding: 12px 6px; margin: -12px -6px; }
+  .mobile-tabs a { padding: 12px 18px; }
+}
+
 /* bottom mobile tab bar */
 .mobile-tabs {
   display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 60;
