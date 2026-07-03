@@ -182,7 +182,7 @@ export function LedgerView({ model }: { model: Model }) {
           <h4>Did they keep it?</h4>
           <div className="split">
             <i style={{ width: `${holding * 100}%`, background: "var(--hold)" }} />
-            <i style={{ width: `${partial * 100}%`, background: "var(--accent)" }} />
+            <i style={{ width: `${partial * 100}%`, background: "var(--warn)" }} />
             <i style={{ width: `${sold * 100}%`, background: "var(--exit)" }} />
           </div>
           <div className="legend">
@@ -191,7 +191,7 @@ export function LedgerView({ model }: { model: Model }) {
               holding ≥90% <b className="mono">{fmtPct(holding, 0)}</b>
             </span>
             <span className="mk">
-              <i style={{ background: "var(--accent)" }} />
+              <i style={{ background: "var(--warn)" }} />
               kept some <b className="mono">{fmtPct(partial, 0)}</b>
             </span>
             <span className="mk">

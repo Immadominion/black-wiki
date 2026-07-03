@@ -16,6 +16,8 @@
   --accent-soft: rgba(47, 214, 87, 0.12);
   --bone: #e9e4d8;
   --hold: #4caf6e;
+  --warn: #e8a33d;
+  --warn-soft: rgba(232, 163, 61, 0.13);
   --exit: #e05252;
   --exit-soft: rgba(224, 82, 82, 0.12);
   --info: #5b8def;
@@ -327,7 +329,7 @@ button { font: inherit; }
   border-radius: 999px; padding: 3px 10px; font-size: 10.5px; font-weight: 700;
 }
 .status.holding { background: rgba(76, 175, 110, 0.13); color: var(--hold); }
-.status.partial { background: var(--accent-soft); color: var(--accent-bright); }
+.status.partial { background: var(--warn-soft); color: var(--warn); }
 .status.sold { background: var(--exit-soft); color: var(--exit); }
 .status.unknown { background: rgba(91, 141, 239, 0.13); color: var(--info); }
 
