@@ -187,7 +187,7 @@ export default function Overview() {
               <p>
                 A copycat &ldquo;ANSEM&rdquo; mint (<span className="mono">BWVL…p7Y7</span>) flashes a fake{" "}
                 <b>$86M</b> of one-sided liquidity on a decoy Raydium pool to bait buyers. The only authentic mint
-                ends in <span className="mono" style={{ color: "var(--gold-bright)" }}>pump</span> — copy it from
+                ends in <span className="mono" style={{ color: "var(--accent-bright)" }}>pump</span> — copy it from
                 the top bar, never from search.
               </p>
             </div>

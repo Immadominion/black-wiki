@@ -30,9 +30,9 @@ without explicit approval.
 - **Surfaces:** `#0D0D0C` / `#121210`, separated by hairlines `#1E1D1A` / `#171613` — sections divide by line, not by card.
 - **Ink:** `#F2EFE8` · secondary `#B8B2A4` · muted `#9A9484` · faint `#87816F` (AA-checked on black).
 - **Hero:** radial gold glow `rgba(232,163,61,.10)` behind the bull mascot (public/bull-hero.png) — the artwork IS the hero decoration.
-- **Accent (bull gold):** `#E8A33D`; bright `#F0B04A`; CTA `linear-gradient(135deg,#F0B04A,#B87A1C)`; glow `rgba(232,163,61,.28)`.
-- **Semantic:** holding/verified `#4CAF6E` · partial `#E8A33D` · sold/exit `#E05252` (chip on `rgba(224,82,82,.12)`) · info `#6B96EF` (chip on `rgba(107,150,239,.13)`).
-- **Rule:** green = still holding / onchain-verified ONLY. Red = exits only. Gold is the brand.
+- **Accent (token neon green):** `#2FD657`; bright `#4BE96F`; CTA `linear-gradient(135deg,#4BE96F,#1FA843)` on `#05170B` text; glow `rgba(47,214,87,.28)`. This is the $ANSEM icon's own green (2026-07-03: gold accent REJECTED — brand must match the coin).
+- **Semantic:** holding `#4CAF6E` · sold/exit `#E05252` (chip on `rgba(224,82,82,.12)`) · info `#6B96EF`.
+- **Brand truth (verified onchain 2026-07-03):** TWO logos exist. The Token-2022 metadata URI (meta.uxento.io) points to a photoreal bull-with-Ansem's-face image = the anonymous DEPLOYER's upload. The icon the market knows — DexScreener enhanced info + CoinGecko + every chart — is the geometric black bull with NEON GREEN horns. We use the green bull (public/coin-hero.png, token.png, favicon.png, apple-icon.png). Do not swap back.
 
 ## Iconography
 Inline SVG marks (no icon font): arrow-out = transfer, seal = onchain-verified,

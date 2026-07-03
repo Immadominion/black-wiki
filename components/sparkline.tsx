@@ -32,8 +32,8 @@ export function Sparkline({
     >
       <defs>
         <linearGradient id="sparkfill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="rgba(240,176,74,0.24)" />
-          <stop offset="100%" stopColor="rgba(240,176,74,0)" />
+          <stop offset="0%" stopColor="rgba(75,233,111,0.24)" />
+          <stop offset="100%" stopColor="rgba(75,233,111,0)" />
         </linearGradient>
       </defs>
       {dropStart && dropEnd && (
@@ -46,8 +46,8 @@ export function Sparkline({
         />
       )}
       <path d={area} fill="url(#sparkfill)" />
-      <path d={path} fill="none" stroke="#F0B04A" strokeWidth="2" strokeLinejoin="round" />
-      <circle cx={x(series[athIdx][0])} cy={y(series[athIdx][1])} r="3.5" fill="#F0B04A" />
+      <path d={path} fill="none" stroke="#4BE96F" strokeWidth="2" strokeLinejoin="round" />
+      <circle cx={x(series[athIdx][0])} cy={y(series[athIdx][1])} r="3.5" fill="#4BE96F" />
     </svg>
   );
 }

@@ -59,7 +59,7 @@ function Row({ r }: { r: Recipient }) {
                 {fmtTs(tx.ts)} UTC
               </span>
               <span className="mono">{fmtAmt(tx.amount)} ANSEM</span>
-              <span className="mono" style={{ color: "var(--gold-bright)" }}>
+              <span className="mono" style={{ color: "var(--accent-bright)" }}>
                 {fmtUsd(tx.usd)}
               </span>
               <a href={`https://solscan.io/tx/${tx.sig}`} target="_blank" rel="noopener noreferrer">
@@ -182,7 +182,7 @@ export function LedgerView({ model }: { model: Model }) {
           <h4>Did they keep it?</h4>
           <div className="split">
             <i style={{ width: `${holding * 100}%`, background: "var(--hold)" }} />
-            <i style={{ width: `${partial * 100}%`, background: "var(--gold)" }} />
+            <i style={{ width: `${partial * 100}%`, background: "var(--accent)" }} />
             <i style={{ width: `${sold * 100}%`, background: "var(--exit)" }} />
           </div>
           <div className="legend">
@@ -191,7 +191,7 @@ export function LedgerView({ model }: { model: Model }) {
               holding ≥90% <b className="mono">{fmtPct(holding, 0)}</b>
             </span>
             <span className="mk">
-              <i style={{ background: "var(--gold)" }} />
+              <i style={{ background: "var(--accent)" }} />
               kept some <b className="mono">{fmtPct(partial, 0)}</b>
             </span>
             <span className="mk">
