@@ -456,6 +456,24 @@ button { font: inherit; }
 
 /* ---------- footer ---------- */
 .site-footer { border-top: 1px solid var(--hairline); background: var(--surface); }
+.support { border-bottom: 1px solid var(--hairline); }
+.support-in { display: flex; align-items: center; gap: 14px; padding-top: 16px; padding-bottom: 16px; flex-wrap: wrap; }
+.support-lede { color: var(--ink-2); font-size: 13px; }
+.support-chip {
+  all: unset; cursor: pointer;
+  font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+  color: var(--accent-bright); background: var(--accent-soft);
+  border: 1px solid rgba(47, 214, 87, 0.35); border-radius: 999px;
+  padding: 6px 14px;
+  transition: border-color 0.15s var(--ease);
+}
+.support-chip:hover { border-color: rgba(47, 214, 87, 0.7); }
+.support-pay { color: var(--muted); font-size: 12.5px; border-bottom: 1px dotted var(--faint); }
+.support-pay:hover { color: var(--accent); }
+@media (max-width: 640px) {
+  .support-in { row-gap: 10px; }
+  .support-lede { flex-basis: 100%; }
+}
 .foot-in { display: flex; gap: 40px; justify-content: space-between; align-items: flex-start; padding-top: 30px; padding-bottom: 34px; flex-wrap: wrap; }
 .foot-brand { font-family: var(--font-display); font-weight: 800; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
 .site-footer p { color: var(--faint); font-size: 12px; max-width: 68ch; }

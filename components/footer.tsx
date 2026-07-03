@@ -1,6 +1,9 @@
+import { Support } from "./support";
+
 export function Footer({ generatedAt }: { generatedAt?: string }) {
   return (
     <footer className="site-footer">
+      <Support />
       <div className="wrap foot-in">
         <div>
           <div className="foot-brand">Black Bull Ledger</div>
